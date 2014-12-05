@@ -1,0 +1,12 @@
+Package: shinythemes
+Title: Themes for Shiny
+Version: 0.1
+Authors@R: "Winston Chang <winston@rrstudio.com> [aut, cre]"
+Description: Themes for use with Shiny. Includes several Bootstrap themes
+    from http://bootswatch.com/, which are packaged for use with Shiny
+    applications.
+Depends:
+    R (>= 3.0.0)
+Imports:
+    shiny (>= 0.10.2.9004)
+License: GPL-2
