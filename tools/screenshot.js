@@ -16,12 +16,13 @@ var page = require('webpage').create();
 
 page.viewportSize = {
   width: 800,
-  height: 450
+  height: 500
 };
 
 page.open('http://localhost:9000/', function() {
   // Delay 200ms before taking screenshot
   window.setTimeout(function () {
+    page.clipRect = { top: 0, left: 0, width: 800, height: 500 };
     page.render(filename);
     phantom.exit();
   }, 200);
