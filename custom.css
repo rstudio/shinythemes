@@ -1,0 +1,25 @@
+.carousel-indicators li {
+  border: 1px solid #000;
+}
+
+.carousel-indicators .active {
+  background-color: #666;
+}
+
+.carousel-caption .caption-text {
+  background: rgba(50, 50, 50, 0.4);
+  padding: 8px 30px;
+  border-radius: 10px;
+}
+
+#carousel-theme {
+  max-width: 800px;
+}
+
+/* Faster transitions */
+.carousel-inner > .item {
+  -webkit-transition: 0.25s ease-in-out left;
+  -moz-transition: 0.25s ease-in-out left;
+  -o-transition: 0.25s ease-in-out left;
+  transition: 0.25s ease-in-out left;
+}
