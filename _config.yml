@@ -1,7 +1,7 @@
 # Jekyll settings
 
 exclude:
-  - "README"
+  - "README.md"
   - "Makefile"
   - "*.Rmd"
   - "*.R"
