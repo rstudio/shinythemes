@@ -217,9 +217,22 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </div>
 <div id="how-it-works" class="section level2">
 <h2>How it works</h2>
+<p>Bootstrap can use alternative CSS files in place of the stock <code>bootstrap.css</code> file. When the <strong>shinythemes</strong> package is loaded, it makes these alternate themes available to Shiny applications in a relative URL under <code>shinythemes/</code>.</p>
+<p>The source code for shinythemes is available <a href="https://github.com/rstudio/shinythemes">here</a>.</p>
 </div>
 <div id="how-to-use-other-bootstrap-themes" class="section level2">
 <h2>How to use other Bootstrap themes</h2>
+<p>If you want to use a Bootstrap theme that isn’t included in <strong>shinythemes</strong>, you can include it in an app’s <code>www/</code> subdirectory. The directory structure would be like this:</p>
+<pre><code>myapp
+ |-- server.R
+ |-- ui.R
+ |-- www/
+      |-- mytheme.css</code></pre>
+<p>Files in the <code>www/</code> directory are automatically made available to your app. Your <code>ui.R</code> file would look like this:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fluidPage</span>(
+  <span class="dt">theme =</span> <span class="st">&quot;mytheme.css&quot;</span>,
+  ...
+)</code></pre>
 </div>
 
 

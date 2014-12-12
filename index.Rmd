@@ -135,6 +135,27 @@ All the themes are from http://bootswatch.com/.
 
 ## How it works
 
+Bootstrap can use alternative CSS files in place of the stock `bootstrap.css` file. When the **shinythemes** package is loaded, it makes these alternate themes available to Shiny applications in a relative URL under `shinythemes/`.
+
+The source code for shinythemes is available [here](https://github.com/rstudio/shinythemes).
 
 ## How to use other Bootstrap themes
 
+If you want to use a Bootstrap theme that isn't included in **shinythemes**, you can include it in an app's `www/` subdirectory. The directory structure would be like this:
+
+```
+myapp
+ |-- server.R
+ |-- ui.R
+ |-- www/
+      |-- mytheme.css
+```
+
+Files in the `www/` directory are automatically made available to your app. Your `ui.R` file would look like this:
+
+```{r eval=FALSE}
+fluidPage(
+  theme = "mytheme.css",
+  ...
+)
+```
