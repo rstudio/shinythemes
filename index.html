@@ -42,118 +42,111 @@
 </div>
 
 
-<div id="section" class="section level2">
-<h2></h2>
 <p>The shinythemes package makes it easy to apply Bootstrap themes to your Shiny applications.</p>
-<p>Here’s a screenshot of a sample Shiny app with the default theme:</p>
-<p>And here’s the same app with the United theme:</p>
 <p>
-<div id="carousel-theme" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-theme" data-slide-to="0" class = "active"></li>
-    <li data-target="#carousel-theme" data-slide-to="1" ></li>
-    <li data-target="#carousel-theme" data-slide-to="2" ></li>
-    <li data-target="#carousel-theme" data-slide-to="3" ></li>
-    <li data-target="#carousel-theme" data-slide-to="4" ></li>
-    <li data-target="#carousel-theme" data-slide-to="5" ></li>
-    <li data-target="#carousel-theme" data-slide-to="6" ></li>
-    <li data-target="#carousel-theme" data-slide-to="7" ></li>
+<div class="row">
+  <div class="col-sm-2">
+    <ul id="themeTabs" class="nav nav-pills nav-stacked">
 
-  </ol>
-  <div class="carousel-inner" role="listbox">
+      <li role="presentation"><a href="#default">Default</a></li>
+      
 
-      <div class="item active">
-        <img src="images/default.png" alt="Default">
-        <div class="carousel-caption">
-          <h2>
-            <span class="caption-text">Default</span>
-          </h2>
-        </div>
+      <li role="presentation"><a href="#cerulean">Cerulean</a></li>
+      
+
+      <li role="presentation"><a href="#cosmo">Cosmo</a></li>
+      
+
+      <li role="presentation"><a href="#flatly">Flatly</a></li>
+      
+
+      <li role="presentation"><a href="#journal">Journal</a></li>
+      
+
+      <li role="presentation"><a href="#readable">Readable</a></li>
+      
+
+      <li role="presentation"><a href="#spacelab">Spacelab</a></li>
+      
+
+      <li role="presentation"><a href="#united">United</a></li>
+      
+
+    </ul>
+  </div>
+
+  <div class="tab-content col-sm-10">
+
+      <div role="tabpanel" class="tab-pane" id="default">
+        <img src="images/default.png" class="screenshot-image">
       </div>
       
 
-      <div class="item">
-        <img src="images/cerulean.png" alt="Cerulean">
-        <div class="carousel-caption">
-          <h2>
-            <span class="caption-text">Cerulean</span>
-          </h2>
-        </div>
+      <div role="tabpanel" class="tab-pane" id="cerulean">
+        <img src="images/cerulean.png" class="screenshot-image">
       </div>
       
 
-      <div class="item">
-        <img src="images/cosmo.png" alt="Cosmo">
-        <div class="carousel-caption">
-          <h2>
-            <span class="caption-text">Cosmo</span>
-          </h2>
-        </div>
+      <div role="tabpanel" class="tab-pane" id="cosmo">
+        <img src="images/cosmo.png" class="screenshot-image">
       </div>
       
 
-      <div class="item">
-        <img src="images/flatly.png" alt="Flatly">
-        <div class="carousel-caption">
-          <h2>
-            <span class="caption-text">Flatly</span>
-          </h2>
-        </div>
+      <div role="tabpanel" class="tab-pane" id="flatly">
+        <img src="images/flatly.png" class="screenshot-image">
       </div>
       
 
-      <div class="item">
-        <img src="images/journal.png" alt="Journal">
-        <div class="carousel-caption">
-          <h2>
-            <span class="caption-text">Journal</span>
-          </h2>
-        </div>
+      <div role="tabpanel" class="tab-pane" id="journal">
+        <img src="images/journal.png" class="screenshot-image">
       </div>
       
 
-      <div class="item">
-        <img src="images/readable.png" alt="Readable">
-        <div class="carousel-caption">
-          <h2>
-            <span class="caption-text">Readable</span>
-          </h2>
-        </div>
+      <div role="tabpanel" class="tab-pane" id="readable">
+        <img src="images/readable.png" class="screenshot-image">
       </div>
       
 
-      <div class="item">
-        <img src="images/spacelab.png" alt="Spacelab">
-        <div class="carousel-caption">
-          <h2>
-            <span class="caption-text">Spacelab</span>
-          </h2>
-        </div>
+      <div role="tabpanel" class="tab-pane" id="spacelab">
+        <img src="images/spacelab.png" class="screenshot-image">
       </div>
       
 
-      <div class="item">
-        <img src="images/united.png" alt="United">
-        <div class="carousel-caption">
-          <h2>
-            <span class="caption-text">United</span>
-          </h2>
-        </div>
+      <div role="tabpanel" class="tab-pane" id="united">
+        <img src="images/united.png" class="screenshot-image">
       </div>
       
 
   </div>
-  <a class="left carousel-control" href="#carousel-theme" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-theme" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
 </div>
+
+<script>
+  // Cycle through tabs automatically
+  var tabChange = function () {
+      var tabs = $(".nav-pills > li");
+      var active = tabs.filter(".active");
+      var next = active.next("li").length ?
+                  active.next("li").find("a") :
+                  tabs.filter(":first-child").find("a");
+      next.tab("show");
+  };
+  var tabCycle = setInterval(tabChange, 5000);
+
+  // If user clicks on a tab, stop cycling it and activate
+  $("#themeTabs li a").each(function() {
+    $(this).click(function (e) {
+      e.preventDefault();
+      clearInterval(tabCycle);
+      $(this).tab("show");
+    });
+  });
+
+  // On page load, activate first tab
+  $(function () {
+    $("#themeTabs a:first").tab("show");
+  });
+  </script>
 </p>
-</div>
 <div id="how-to-use-it" class="section level2">
 <h2>How to use it</h2>
 </div>
@@ -162,7 +155,6 @@
 </div>
 <div id="how-to-use-other-bootstrap-themes" class="section level2">
 <h2>How to use other Bootstrap themes</h2>
-<p>If you want to use other</p>
 </div>
 
 
