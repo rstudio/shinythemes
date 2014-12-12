@@ -1,4 +1,12 @@
 img.screenshot-image {
   max-width: 100%;
   box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.3);
+  border: 1px solid #ccc;
+}
+
+.image-frame {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0px 15px;
 }

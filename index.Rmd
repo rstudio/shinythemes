@@ -39,14 +39,20 @@ generateItemTags <- function(images) {
 
 output <- paste0(c('
 <div class="row">
-  <div class="col-sm-2">
-    <ul id="themeTabs" class="nav nav-pills nav-stacked">',
-    generateTabTags(images), '
-    </ul>
-  </div>
+  <div class="col-sm-12">
+    <div class="image-frame">
+      <div class="row">
+        <div class="col-sm-2">
+          <ul id="themeTabs" class="nav nav-pills nav-stacked">',
+          generateTabTags(images), '
+          </ul>
+        </div>
 
-  <div class="tab-content col-sm-10">',
-    generateItemTags(images), '
+        <div class="tab-content col-sm-10">',
+          generateItemTags(images), '
+        </div>
+        </div>
+    </div>
   </div>
 </div>
 
