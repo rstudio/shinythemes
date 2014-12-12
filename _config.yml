@@ -1,0 +1,11 @@
+# Jekyll settings
+
+exclude:
+  - "README"
+  - "Makefile"
+  - "*.Rmd"
+  - "*.R"
+  - "tools/"
+  - "*.Rproj"
+  - "*.sublime-*"
+
