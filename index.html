@@ -20,6 +20,31 @@
 <script src="libs/bootstrap-3.3.1/shim/respond.min.js"></script>
 
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; background-color: #dddddd; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { font-weight: bold; }
+code > span.dt { color: #800000; }
+code > span.dv { color: #0000ff; }
+code > span.bn { color: #0000ff; }
+code > span.fl { color: #800080; }
+code > span.ch { color: #ff00ff; }
+code > span.st { color: #dd0000; }
+code > span.co { color: #808080; font-style: italic; }
+code > span.al { color: #00ff00; font-weight: bold; }
+code > span.fu { color: #000080; }
+code > span.er { color: #ff0000; font-weight: bold; }
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
 
 <link rel="stylesheet" href="custom.css" type="text/css" />
 
@@ -42,7 +67,7 @@
 </div>
 
 
-<p>The shinythemes package makes it easy to apply Bootstrap themes to your Shiny applications.</p>
+<p>The <strong>shinythemes</strong> package makes it easy to alter the overall appearance of your Shiny applications Here are screenshots of the same applications with different themes:</p>
 <p>
 <div class="row">
   <div class="col-sm-12">
@@ -159,6 +184,36 @@
 </p>
 <div id="how-to-use-it" class="section level2">
 <h2>How to use it</h2>
+<p>In your ui.R, use the <code>theme</code> argument to <code>bootstrapPage</code>, <code>fluidPage</code>, <code>navbarPage</code>, or <code>fixedPage</code>. The value should be <code>shinytheme(&quot;&lt;theme&gt;&quot;)</code>; for example, <code>shinytheme(&quot;cerulean&quot;)</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">## ui.R ##
+<span class="kw">library</span>(shinythemes)
+
+<span class="kw">fluidPage</span>(<span class="dt">theme =</span> <span class="kw">shinytheme</span>(<span class="st">&quot;cerulean&quot;</span>),
+  ...
+)</code></pre>
+<p>Similarly, if you have a single-file app:</p>
+<pre class="sourceCode r"><code class="sourceCode r">## app.R ##
+<span class="kw">library</span>(shinythemes)
+
+<span class="kw">shinyApp</span>(
+  <span class="dt">ui =</span> <span class="kw">fluidPage</span>(<span class="dt">theme =</span> <span class="kw">shinytheme</span>(<span class="st">&quot;united&quot;</span>),
+    ...
+  ),
+  <span class="dt">server =</span> function(input, output) { }
+)</code></pre>
+</div>
+<div id="the-themes" class="section level2">
+<h2>The themes</h2>
+<p>All the themes are from <a href="http://bootswatch.com/" class="uri">http://bootswatch.com/</a>.</p>
+<ul>
+<li><a href="http://bootswatch.com/cerulean/">cerulean</a></li>
+<li><a href="http://bootswatch.com/cosmo/">cosmo</a></li>
+<li><a href="http://bootswatch.com/flatly/">flatly</a></li>
+<li><a href="http://bootswatch.com/journal/">journal</a></li>
+<li><a href="http://bootswatch.com/readable/">readable</a></li>
+<li><a href="http://bootswatch.com/spacelab/">spacelab</a></li>
+<li><a href="http://bootswatch.com/united/">united</a></li>
+</ul>
 </div>
 <div id="how-it-works" class="section level2">
 <h2>How it works</h2>

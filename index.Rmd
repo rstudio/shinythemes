@@ -6,11 +6,10 @@ output:
 ---
 
 
-The shinythemes package makes it easy to apply Bootstrap themes to your Shiny applications.
+The **shinythemes** package makes it easy to alter the overall appearance of your Shiny applications Here are screenshots of the same applications with different themes:
 
 
 ```{r echo=FALSE}
-# Generate the carousel
 images <- c("default", "cerulean", "cosmo", "flatly", "journal", "readable",
             "spacelab", "united")
 
@@ -94,11 +93,48 @@ knitr::asis_output(htmltools::htmlPreserve(output))
 
 ## How to use it
 
+In your ui.R, use the `theme` argument to `bootstrapPage`, `fluidPage`, `navbarPage`, or `fixedPage`.  The value should be `shinytheme("<theme>")`; for example, `shinytheme("cerulean")`.
+
+```{r eval=FALSE}
+## ui.R ##
+library(shinythemes)
+
+fluidPage(theme = shinytheme("cerulean"),
+  ...
+)
+```
+
+
+Similarly, if you have a single-file app:
+
+```{r eval=FALSE}
+## app.R ##
+library(shinythemes)
+
+shinyApp(
+  ui = fluidPage(theme = shinytheme("united"),
+    ...
+  ),
+  server = function(input, output) { }
+)
+```
+
+
+## The themes
+
+All the themes are from http://bootswatch.com/.
+
+* [cerulean](http://bootswatch.com/cerulean/)
+* [cosmo](http://bootswatch.com/cosmo/)
+* [flatly](http://bootswatch.com/flatly/)
+* [journal](http://bootswatch.com/journal/)
+* [readable](http://bootswatch.com/readable/)
+* [spacelab](http://bootswatch.com/spacelab/)
+* [united](http://bootswatch.com/united/)
+
 
 ## How it works
 
 
 ## How to use other Bootstrap themes
-
-
 
