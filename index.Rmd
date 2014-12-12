@@ -60,7 +60,7 @@ output <- paste0(c('
                   tabs.filter(":first-child").find("a");
       next.tab("show");
   };
-  var tabCycle = setInterval(tabChange, 5000);
+  var tabCycle = setInterval(tabChange, 4000);
 
   // If user clicks on a tab, stop cycling it and activate
   $("#themeTabs li a").each(function() {
@@ -68,6 +68,11 @@ output <- paste0(c('
       e.preventDefault();
       clearInterval(tabCycle);
       $(this).tab("show");
+
+      // Automatically start cycling tabs after a delay
+      setTimeout(function () {
+        tabCycle = setInterval(tabChange, 4000);
+      }, 10000);
     });
   });
 
