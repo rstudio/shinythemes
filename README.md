@@ -1,6 +1,8 @@
 shinythemes
 ===========
 
+See the documentation at http://rstudio.github.io/shinythemes/.
+
 The shinythemes package provides some Bootstrap themes for use with Shiny. The themes are from from http://bootswatch.com/:
 
 * [cerulean](http://bootswatch.com/cerulean/)
