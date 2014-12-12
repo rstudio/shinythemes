@@ -14,7 +14,7 @@ The shinythemes package provides some Bootstrap themes for use with Shiny. The t
 
 ## Using themes
 
-Using the themes is simple. Use the `theme` argument to `bootstrapPage`, `fluidPage`, `navbarPage`, or `fixedPage`. The value should be `"<theme>.min.css"`; for example, `"cerulean.min.css"`.
+Using the themes is simple. Use the `theme` argument to `bootstrapPage`, `fluidPage`, `navbarPage`, or `fixedPage`. The value should be `shinytheme("<theme>")`; for example, `shinytheme("cerulean")`.
 
 For example, a ui.R file might look something like this:
 
@@ -22,7 +22,7 @@ For example, a ui.R file might look something like this:
 library(shinythemes)
 
 navbarPage("United",
-  theme = "shinythemes/united.min.css",
+  theme = shinytheme("cerulean"),
   tabPanel("Plot", "Plot tab contents..."),
   navbarMenu("More",
     tabPanel("Summary", "Summary tab contents..."),
@@ -39,7 +39,7 @@ library(shinythemes)
 
 shinyApp(
   ui = navbarPage("United",
-    theme = "shinythemes/united.min.css",
+    theme = shinytheme("united"),
     tabPanel("Plot", "Plot tab contents..."),
     navbarMenu("More",
       tabPanel("Summary", "Summary tab contents..."),
