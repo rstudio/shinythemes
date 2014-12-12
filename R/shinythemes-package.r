@@ -14,7 +14,8 @@
 #' To use the themes, use the \code{theme} argument to
 #' \code{\link[shiny]{bootstrapPage}}, \code{\link[shiny]{fluidPage}},
 #' \code{\link[shiny]{navbarPage}}, or \code{\link[shiny]{fixedPage}}. The value
-#' should be \code{"<theme>.min.css"}; for example, \code{"cerulean.min.css"}.
+#' should be \code{shinytheme("cerulean")}, where the theme name takes the place
+#' of \code{"cerulean"}.
 #'
 #' @examples
 #' \dontrun{
@@ -35,7 +36,7 @@
 #'
 #' shinyApp(
 #'   ui = navbarPage("United",
-#'     theme = "shinythemes/united.min.css",
+#'     theme = shinytheme("united"),
 #'     tabPanel("Plot", "Plot tab contents..."),
 #'     navbarMenu("More",
 #'       tabPanel("Summary", "Summary tab contents..."),
@@ -47,7 +48,7 @@
 #'
 #' shinyApp(
 #'   ui = navbarPage("Cerulean",
-#'     theme = "shinythemes/cerulean.min.css",
+#'     theme = shinytheme("cerulean"),
 #'     tabPanel("Plot", "Plot tab contents..."),
 #'     navbarMenu("More",
 #'       tabPanel("Summary", "Summary tab contents..."),
@@ -61,7 +62,7 @@
 #' # A more complicated app with the flatly theme
 #' shinyApp(
 #'   ui = fluidPage(
-#'     theme = "shinythemes/flatly.min.css",
+#'     theme = shinytheme("flatly"),
 #'     titlePanel("Tabsets"),
 #'     sidebarLayout(
 #'       sidebarPanel(
