@@ -180,6 +180,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </p>
 <div id="how-to-use-it" class="section level2">
 <h2>How to use it</h2>
+<p>Shinythemes is not yet on CRAN, but you can install it using devtools:</p>
+<pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">install_github</span>(<span class="st">&quot;rstudio/shinythemes&quot;</span>)</code></pre>
 <p>In your ui.R, use the <code>theme</code> argument to <code>bootstrapPage</code>, <code>fluidPage</code>, <code>navbarPage</code>, or <code>fixedPage</code>. The value should be <code>shinytheme(&quot;&lt;theme&gt;&quot;)</code>; for example, <code>shinytheme(&quot;cerulean&quot;)</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">## ui.R ##
 <span class="kw">library</span>(shinythemes)
@@ -200,7 +202,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </div>
 <div id="the-themes" class="section level2">
 <h2>The themes</h2>
-<p>All the themes are from <a href="http://bootswatch.com/" class="uri">http://bootswatch.com/</a>.</p>
+<p>All the themes are from <a href="http://bootswatch.com/" class="uri">http://bootswatch.com/</a>, and are MIT-licensed.</p>
 <ul>
 <li><a href="http://bootswatch.com/cerulean/">cerulean</a></li>
 <li><a href="http://bootswatch.com/cosmo/">cosmo</a></li>

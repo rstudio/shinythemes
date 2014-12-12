@@ -89,6 +89,12 @@ knitr::asis_output(htmltools::htmlPreserve(output))
 
 ## How to use it
 
+Shinythemes is not yet on CRAN, but you can install it using devtools:
+
+```{r eval=FALSE}
+devtools::install_github("rstudio/shinythemes")
+```
+
 In your ui.R, use the `theme` argument to `bootstrapPage`, `fluidPage`, `navbarPage`, or `fixedPage`.  The value should be `shinytheme("<theme>")`; for example, `shinytheme("cerulean")`.
 
 ```{r eval=FALSE}
