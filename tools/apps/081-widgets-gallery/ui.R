@@ -3,15 +3,18 @@ library(shinythemes)
 # If no theme was set externally, or if "" or "default", use NULL;
 # otherwise use full path to CSS file
 if (is.null(.GlobalEnv$theme) || .GlobalEnv$theme %in% c("", "default")) {
+  title <- "Default"
   theme <- NULL
 } else {
+  # Capitalize first letter for title
+  title <- paste0(toupper(substring(theme, 1, 1)), substring(theme, 2))
   theme <- paste0("shinythemes/", theme, ".min.css")
 }
 
 fluidPage(
   theme = theme,
 
-  h1("Shiny Widgets"),
+  h1(title),
 
   tabsetPanel(
     tabPanel("Set 1",
