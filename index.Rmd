@@ -37,22 +37,18 @@ generateItemTags <- function(images) {
 }
 
 output <- paste0(c('
-<div class="row">
-  <div class="col-sm-12">
-    <div class="image-frame">
-      <div class="row">
-        <div class="col-sm-2">
-          <ul id="themeTabs" class="nav nav-pills nav-stacked">',
-          generateTabTags(images), '
-          </ul>
-        </div>
-
-        <div class="tab-content col-sm-10">',
-          generateItemTags(images), '
-        </div>
-        </div>
+<div class="image-frame">
+  <div class="row">
+    <div class="col-sm-2">
+      <ul id="themeTabs" class="nav nav-pills nav-stacked">',
+      generateTabTags(images), '
+      </ul>
     </div>
-  </div>
+
+    <div class="tab-content col-sm-10">',
+      generateItemTags(images), '
+    </div>
+    </div>
 </div>
 
 <script>
@@ -122,7 +118,7 @@ shinyApp(
 
 ## The themes
 
-All the themes are from http://bootswatch.com/.
+All the themes are from http://bootswatch.com/, and are MIT-licensed.
 
 * [cerulean](http://bootswatch.com/cerulean/)
 * [cosmo](http://bootswatch.com/cosmo/)

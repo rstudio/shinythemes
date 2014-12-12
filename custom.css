@@ -5,10 +5,9 @@ img.screenshot-image {
 }
 
 .image-frame {
-  padding: 15px;
+  padding: 30px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin: 0px 15px;
 }
 
 code {
