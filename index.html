@@ -122,15 +122,16 @@
 
 <script>
   // Cycle through tabs automatically
-  var tabChange = function () {
+  var tabChange = function() {
       var tabs = $(".nav-pills > li");
       var active = tabs.filter(".active");
       var next = active.next("li").length ?
                   active.next("li").find("a") :
                   tabs.filter(":first-child").find("a");
       next.tab("show");
+      tabCycle = setTimeout(tabChange, 4000);
   };
-  var tabCycle = setInterval(tabChange, 4000);
+  var tabCycle = setTimeout(tabChange, 4000);
 
   // If user clicks on a tab, stop cycling it and activate
   $("#themeTabs li a").each(function() {
@@ -140,9 +141,7 @@
       $(this).tab("show");
 
       // Automatically start cycling tabs after a delay
-      setTimeout(function () {
-        tabCycle = setInterval(tabChange, 4000);
-      }, 10000);
+      tabCycle = setTimeout(tabChange, 12000);
     });
   });
 
