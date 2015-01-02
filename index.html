@@ -58,6 +58,14 @@ code > span.er { color: #ff0000; font-weight: bold; }
   margin-left: auto;
   margin-right: auto;
 }
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img { 
+  max-width:100%; 
+  height: auto; 
+}
 </style>
 <div class="container-fluid main-container">
 
@@ -180,7 +188,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </p>
 <div id="how-to-use-it" class="section level2">
 <h2>How to use it</h2>
-<p><strong>shinythemes</strong> presently works only with the development version of Shiny. It is not yet on CRAN, but you can install it using devtools:</p>
+<p><strong>shinythemes</strong> requires Shiny 0.11 or later. This version of Shiny is not yet on CRAN, but you can install it using devtools:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Install development version of shiny</span>
 devtools::<span class="kw">install_github</span>(<span class="st">&quot;rstudio/shiny&quot;</span>)
 
@@ -205,7 +213,7 @@ devtools::<span class="kw">install_github</span>(<span class="st">&quot;rstudio/
 </div>
 <div id="the-themes" class="section level2">
 <h2>The themes</h2>
-<p>All the themes are from <a href="http://bootswatch.com/" class="uri">http://bootswatch.com/</a>, and are MIT-licensed.</p>
+<p>All the themes are from <a href="http://bootswatch.com/">http://bootswatch.com/</a>, and are MIT-licensed.</p>
 <ul>
 <li><a href="http://bootswatch.com/cerulean/">cerulean</a></li>
 <li><a href="http://bootswatch.com/cosmo/">cosmo</a></li>
@@ -234,6 +242,22 @@ devtools::<span class="kw">install_github</span>(<span class="st">&quot;rstudio/
   <span class="dt">theme =</span> <span class="st">&quot;mytheme.css&quot;</span>,
   ...
 )</code></pre>
+<hr>
+
+<footer>
+  
+<div>
+ 
+</div>
+<div class="text-muted">
+Copyright © 2014 RStudio, Inc.
+</div>
+<div>
+ 
+</div>
+</footer>
+
+
 </div>
 
 

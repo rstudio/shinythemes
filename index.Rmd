@@ -86,7 +86,7 @@ knitr::asis_output(htmltools::htmlPreserve(output))
 
 ## How to use it
 
-**shinythemes** presently works only with the development version of Shiny. It is not yet on CRAN, but you can install it using devtools:
+**shinythemes** requires Shiny 0.11 or later. This version of Shiny is not yet on CRAN, but you can install it using devtools:
 
 ```{r eval=FALSE}
 # Install development version of shiny
@@ -162,3 +162,14 @@ fluidPage(
   ...
 )
 ```
+
+
+<hr>
+
+<footer>
+  <div>&nbsp;</div>
+  <div class="text-muted">
+  Copyright &copy; 2014 RStudio, Inc.
+  </div>
+  <div>&nbsp;</div>
+</footer>
