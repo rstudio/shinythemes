@@ -16,10 +16,4 @@ shinyServer(function(input, output, session) {
   #output$submit <- renderPrint({ input$submit })
   output$text <- renderPrint({ input$text })
 
-  # Quit when a client disconnects
-  session$onSessionEnded(
-    function() {
-      q("no")
-    }
-  )
 })

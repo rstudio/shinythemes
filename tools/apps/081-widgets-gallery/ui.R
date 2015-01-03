@@ -1,15 +1,19 @@
 library(shinythemes)
 
+theme <- Sys.getenv("SHINY_THEME")
+theme <- tolower(theme)
+
 # If no theme was set externally, or if "" or "default", use NULL;
-# otherwise use full path to CSS file
-if (is.null(.GlobalEnv$theme) || .GlobalEnv$theme %in% c("", "default")) {
+# otherwise use appropriate theme
+if (theme == "" || theme == "default") {
   title <- "Default"
   theme <- NULL
 } else {
   # Capitalize first letter for title
   title <- paste0(toupper(substring(theme, 1, 1)), substring(theme, 2))
-  theme <- paste0("shinythemes/", theme, ".min.css")
+  theme <-shinytheme(theme)
 }
+
 
 fluidPage(
   theme = theme,
