@@ -35,5 +35,7 @@ for (theme in themes) {
   message("Taking screenshot for ", theme)
   appshot(appDir, file.path(imageDir, paste0(theme, ".png")),
           vwidth = 800, vheight = 500, delay = 0.75,
-          envvars = c(SHINY_THEME = theme))
+          envvars = c(SHINY_THEME = theme)
+  ) %>%
+    shrink()
 }
