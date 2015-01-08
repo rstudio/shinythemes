@@ -16,8 +16,8 @@
 #'   server = function(input, output) { }
 #' )
 #' }
-#' @seealso shinythemes for information about available themes and more detailed
-#'   examples.
+#' @seealso The main \link{shinythemes} page for information about available
+#'   themes and more detailed examples.
 #' @export
 shinytheme <- function(theme) {
   # Check that theme exists
