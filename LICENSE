@@ -1,4 +1,7 @@
-The shinythemes package inludes other open source software components. The
+The shinythemes package as a whole is distributed under GPL-3 (GNU GENERAL
+PUBLIC LICENSE version 3).
+
+The shinythemes package inludes other GPL-3 compatible software components. The
 following is a list of these components (full copies of the license agreements
 used by these components are included below):
 
@@ -7,7 +10,7 @@ used by these components are included below):
 - Google Web Fonts
 
 
-Bootstrap 
+Bootstrap
 ----------------------------------------------------------------------
 
 The MIT License (MIT)
@@ -33,7 +36,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-Bootswatch 
+Bootswatch
 ----------------------------------------------------------------------
 
 The MIT License (MIT)
