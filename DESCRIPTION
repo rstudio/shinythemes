@@ -1,13 +1,17 @@
 Package: shinythemes
 Title: Themes for Shiny
 Version: 1.0
-Authors@R: as.person(c(
-    "Winston Chang <winston@rstudio.com> [aut, cre]",
-    "Bootstrap contributors [ctb, cph]",
-    "Bootswatch contributors [ctb, cph]",
-    "Google web font contributors [ctb, cph]",
-    "RStudio [cph]"
-    ))
+Authors@R: c(
+    person("Winston", "Chang", role = c("aut", "cre"), email = "winston@rstudio.com"),
+    person(family = "RStudio", role = "cph"),
+    person("Thomas", "Park", role = c("ctb", "cph"), comment = "Bootswatch themes"),
+    person("Lukasz", "Dziedzic", role = c("ctb", "cph"), comment = "Lato font"),
+    person("Nathan", "Willis", role = c("ctb", "cph"), comment = "News Cycle font"),
+    person(family = "Google Corporation", role = c("ctb", "cph"), comment = "Open Sans font"),
+    person("Matt", "McInerney", role = c("ctb", "cph"), comment = "Raleway font"),
+    person(family = "Adobe Systems Incorporated", role = c("ctb", "cph"), comment = "Source Sans Pro font"),
+    person(family = "Canonical Ltd", role = c("ctb", "cph"), comment = "Ubuntu font")
+    )
 Description: Themes for use with Shiny. Includes several Bootstrap themes
     from http://bootswatch.com/, which are packaged for use with Shiny
     applications.
