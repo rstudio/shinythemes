@@ -86,13 +86,10 @@ knitr::asis_output(htmltools::htmlPreserve(output))
 
 ## How to use it
 
-**shinythemes** requires Shiny 0.11 or later. This version of Shiny is not yet on CRAN, but you can install it using devtools:
+**shinythemes** requires Shiny 0.11 or later. To intsall:
 
 ```{r eval=FALSE}
-# Install development version of shiny
-devtools::install_github("rstudio/shiny")
-
-devtools::install_github("rstudio/shinythemes")
+install.packages("shinythemes")
 ```
 
 
