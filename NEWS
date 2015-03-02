@@ -1,0 +1,4 @@
+shinythemes 1.0.1
+--------------------------------------------------------------------------------
+
+* Fixed a bug where icons from the glyphicons font weren't appearing. (#1)
