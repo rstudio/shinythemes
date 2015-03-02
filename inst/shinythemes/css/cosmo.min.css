@@ -2,19 +2,19 @@
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 300;
-  src: url(fonts/SourceSansProLight.ttf) format('truetype');
+  src: url(../fonts/SourceSansProLight.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 400;
-  src: url(fonts/SourceSansPro.ttf) format('truetype');
+  src: url(../fonts/SourceSansPro.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 700;
-  src: url(fonts/SourceSansProBold.ttf) format('truetype');
+  src: url(../fonts/SourceSansProBold.ttf) format('truetype');
 }
 
 /*!

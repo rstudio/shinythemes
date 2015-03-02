@@ -21,10 +21,10 @@
 #' @export
 shinytheme <- function(theme) {
   # Check that theme exists
-  filePath <- system.file("shinythemes", paste0(theme, ".min.css"),
+  filePath <- system.file("shinythemes/css", paste0(theme, ".min.css"),
                           package = "shinythemes")
   if (!file.exists(filePath)) {
-    themes <- dir(system.file("shinythemes", package = "shinythemes"),
+    themes <- dir(system.file("shinythemes/css", package = "shinythemes"),
                   "*.min.css")
     themes <- sub(".min.css", "", themes)
 
@@ -33,5 +33,5 @@ shinytheme <- function(theme) {
   }
 
 
-  paste0("shinythemes/", theme, ".min.css")
+  paste0("shinythemes/css/", theme, ".min.css")
 }
