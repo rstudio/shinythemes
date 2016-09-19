@@ -3,13 +3,24 @@
 #' This package contains Bootstrap themes from http://bootswatch.com/, which are
 #' packaged for use with Shiny applications. The themes included are:
 #'
-#' \itemize{ \item \href{http://bootswatch.com/cerulean/}{cerulean} \item
-#' \href{http://bootswatch.com/cosmo/}{cosmo} \item
-#' \href{http://bootswatch.com/flatly/}{flatly} \item
-#' \href{http://bootswatch.com/journal/}{journal} \item
-#' \href{http://bootswatch.com/readable/}{readable} \item
-#' \href{http://bootswatch.com/spacelab/}{spacelab} \item
-#' \href{http://bootswatch.com/united/}{united} }
+#' \itemize{
+#'   \item \href{http://bootswatch.com/cerulean/}{cerulean}
+#'   \item \href{http://bootswatch.com/cosmo/}{cosmo}
+#'   \item \href{http://bootswatch.com/cyborg/}{cyborg}
+#'   \item \href{http://bootswatch.com/darkly/}{darkly}
+#'   \item \href{http://bootswatch.com/flatly/}{flatly}
+#'   \item \href{http://bootswatch.com/journal/}{journal}
+#'   \item \href{http://bootswatch.com/lumen/}{lumen}
+#'   \item \href{http://bootswatch.com/paper/}{paper}
+#'   \item \href{http://bootswatch.com/readable/}{readable}
+#'   \item \href{http://bootswatch.com/sandstone/}{sandstone}
+#'   \item \href{http://bootswatch.com/simplex/}{simplex}
+#'   \item \href{http://bootswatch.com/slate/}{slate}
+#'   \item \href{http://bootswatch.com/spacelab/}{spacelab}
+#'   \item \href{http://bootswatch.com/superhero/}{superhero}
+#'   \item \href{http://bootswatch.com/united/}{united}
+#'   \item \href{http://bootswatch.com/yeti/}{yeti}
+#' }
 #'
 #' To use the themes, use the \code{theme} argument to
 #' \code{\link[shiny]{bootstrapPage}}, \code{\link[shiny]{fluidPage}},
