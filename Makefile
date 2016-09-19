@@ -1,13 +1,21 @@
 HTML_FILES = index.html
 
-SCREENSHOT_FILES = images/cerulean.png \
-				   images/default.png \
-				   images/journal.png \
-				   images/spacelab.png \
+SCREENSHOT_FILES = images/default.png \
+				   images/cerulean.png \
 				   images/cosmo.png \
+				   images/darkly.png \
 				   images/flatly.png \
+				   images/journal.png \
+				   images/lumen.png \
+				   images/paper.png \
 				   images/readable.png \
-				   images/united.png
+				   images/sandstone.png \
+				   images/simplex.png \
+				   images/slate.png \
+				   images/spacelab.png \
+				   images/superhero.png \
+				   images/united.png \
+				   images/yeti.png
 
 
 all: html screenshots
@@ -25,3 +33,4 @@ $(SCREENSHOT_FILES): tools/make_screenshots.R
 .PHONY: clean
 clean:
 	$(RM) $(HTML_FILES)
+	$(RM) -rf libs
