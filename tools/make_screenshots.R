@@ -3,7 +3,9 @@
 library(webshot)
 
 # All the themes to make screenshots of
-themes <- c("default", "cerulean", "cosmo", "flatly", "journal", "readable", "spacelab", "united")
+themes <- c("default", "cerulean", "cosmo", "cyborg", "darkly", "flatly",
+            "journal", "lumen", "paper", "readable", "sandstone", "simplex",
+            "slate", "spacelab", "superhero", "united", "yeti")
 
 # The application to use for screenshots
 appDir <- "apps/081-widgets-gallery/"
@@ -37,5 +39,5 @@ for (theme in themes) {
           vwidth = 800, vheight = 500, delay = 0.75,
           envvars = c(SHINY_THEME = theme)
   ) %>%
-    shrink()
+  shrink()
 }

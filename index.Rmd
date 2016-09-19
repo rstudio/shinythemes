@@ -7,8 +7,9 @@ The **shinythemes** package makes it easy to alter the overall appearance of you
 
 
 ```{r echo=FALSE}
-images <- c("default", "cerulean", "cosmo", "flatly", "journal", "readable",
-            "spacelab", "united")
+images <- c("default", "cerulean", "cosmo", "cyborg", "darkly", "flatly",
+            "journal", "lumen", "paper", "readable", "sandstone", "simplex",
+            "slate", "spacelab", "superhero", "united", "yeti")
 
 generateTabTags <- function(images) {  
   vapply(images, function(image) {
