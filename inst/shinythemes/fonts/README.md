@@ -1,7 +1,7 @@
 These fonts were downloaded with [google-font-download](https://github.com/neverpanic/google-font-download), using the following command:
 
 ```R
-google-font-download/google-font-download -f ttf \
+google-font-download -f ttf \
     "Source Sans Pro:300" "Source Sans Pro:400"
     "Source Sans Pro:400italic" "Source Sans Pro:700" \
     "Roboto:300" "Roboto:400" "Roboto:500" "Roboto:700" \
