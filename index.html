@@ -10,34 +10,53 @@
 
 
 
+
 <title>Shiny Themes</title>
 
-<script src="libs/jquery-1.11.0/jquery.min.js"></script>
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="libs/bootstrap-3.3.1/css/bootstrap.min.css" rel="stylesheet" />
-<script src="libs/bootstrap-3.3.1/js/bootstrap.min.js"></script>
-<script src="libs/bootstrap-3.3.1/shim/html5shiv.min.js"></script>
-<script src="libs/bootstrap-3.3.1/shim/respond.min.js"></script>
+<link href="libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
+div.sourceCode { overflow-x: auto; }
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
   margin: 0; padding: 0; vertical-align: baseline; border: none; }
 table.sourceCode { width: 100%; line-height: 100%; }
 td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; background-color: #dddddd; }
 td.sourceCode { padding-left: 5px; }
-code > span.kw { font-weight: bold; }
-code > span.dt { color: #800000; }
-code > span.dv { color: #0000ff; }
-code > span.bn { color: #0000ff; }
-code > span.fl { color: #800080; }
-code > span.ch { color: #ff00ff; }
-code > span.st { color: #dd0000; }
-code > span.co { color: #808080; font-style: italic; }
-code > span.al { color: #00ff00; font-weight: bold; }
-code > span.fu { color: #000080; }
-code > span.er { color: #ff0000; font-weight: bold; }
+code > span.kw { font-weight: bold; } /* Keyword */
+code > span.dt { color: #800000; } /* DataType */
+code > span.dv { color: #0000ff; } /* DecVal */
+code > span.bn { color: #0000ff; } /* BaseN */
+code > span.fl { color: #800080; } /* Float */
+code > span.ch { color: #ff00ff; } /* Char */
+code > span.st { color: #dd0000; } /* String */
+code > span.co { color: #808080; font-style: italic; } /* Comment */
+code > span.al { color: #00ff00; font-weight: bold; } /* Alert */
+code > span.fu { color: #000080; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #ff0000; font-weight: bold; } /* Warning */
+code > span.cn { color: #000000; } /* Constant */
+code > span.sc { color: #ff00ff; } /* SpecialChar */
+code > span.vs { color: #dd0000; } /* VerbatimString */
+code > span.ss { color: #dd0000; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { } /* Variable */
+code > span.cf { } /* ControlFlow */
+code > span.op { } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { font-weight: bold; } /* Preprocessor */
+code > span.at { } /* Attribute */
+code > span.do { color: #808080; font-style: italic; } /* Documentation */
+code > span.an { color: #808080; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #808080; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #808080; font-weight: bold; font-style: italic; } /* Information */
 </style>
 <style type="text/css">
   pre:not([class]) {
@@ -45,6 +64,33 @@ code > span.er { color: #ff0000; font-weight: bold; }
   }
 </style>
 
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
 
 <link rel="stylesheet" href="custom.css" type="text/css" />
 
@@ -62,21 +108,48 @@ code {
   color: inherit;
   background-color: rgba(0, 0, 0, 0.04);
 }
-img { 
-  max-width:100%; 
-  height: auto; 
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
 }
 </style>
+
+
+
 <div class="container-fluid main-container">
 
+<!-- tabsets -->
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
 
-<div id="header">
-<h1 class="title">Shiny Themes</h1>
+<!-- code folding -->
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Shiny Themes</h1>
+
 </div>
 
 
 <p>The <strong>shinythemes</strong> package makes it easy to alter the overall appearance of your Shiny applications Here are screenshots of the same applications with different themes:</p>
-<p>
+
 <div class="image-frame">
   <div class="row">
     <div class="col-sm-2">
@@ -91,19 +164,46 @@ img {
       <li role="presentation"><a href="#cosmo">Cosmo</a></li>
       
 
+      <li role="presentation"><a href="#cyborg">Cyborg</a></li>
+      
+
+      <li role="presentation"><a href="#darkly">Darkly</a></li>
+      
+
       <li role="presentation"><a href="#flatly">Flatly</a></li>
       
 
       <li role="presentation"><a href="#journal">Journal</a></li>
       
 
+      <li role="presentation"><a href="#lumen">Lumen</a></li>
+      
+
+      <li role="presentation"><a href="#paper">Paper</a></li>
+      
+
       <li role="presentation"><a href="#readable">Readable</a></li>
+      
+
+      <li role="presentation"><a href="#sandstone">Sandstone</a></li>
+      
+
+      <li role="presentation"><a href="#simplex">Simplex</a></li>
+      
+
+      <li role="presentation"><a href="#slate">Slate</a></li>
       
 
       <li role="presentation"><a href="#spacelab">Spacelab</a></li>
       
 
+      <li role="presentation"><a href="#superhero">Superhero</a></li>
+      
+
       <li role="presentation"><a href="#united">United</a></li>
+      
+
+      <li role="presentation"><a href="#yeti">Yeti</a></li>
       
 
       </ul>
@@ -126,6 +226,16 @@ img {
       </div>
       
 
+      <div role="tabpanel" class="tab-pane" id="cyborg">
+        <img src="images/cyborg.png" class="screenshot-image">
+      </div>
+      
+
+      <div role="tabpanel" class="tab-pane" id="darkly">
+        <img src="images/darkly.png" class="screenshot-image">
+      </div>
+      
+
       <div role="tabpanel" class="tab-pane" id="flatly">
         <img src="images/flatly.png" class="screenshot-image">
       </div>
@@ -136,8 +246,33 @@ img {
       </div>
       
 
+      <div role="tabpanel" class="tab-pane" id="lumen">
+        <img src="images/lumen.png" class="screenshot-image">
+      </div>
+      
+
+      <div role="tabpanel" class="tab-pane" id="paper">
+        <img src="images/paper.png" class="screenshot-image">
+      </div>
+      
+
       <div role="tabpanel" class="tab-pane" id="readable">
         <img src="images/readable.png" class="screenshot-image">
+      </div>
+      
+
+      <div role="tabpanel" class="tab-pane" id="sandstone">
+        <img src="images/sandstone.png" class="screenshot-image">
+      </div>
+      
+
+      <div role="tabpanel" class="tab-pane" id="simplex">
+        <img src="images/simplex.png" class="screenshot-image">
+      </div>
+      
+
+      <div role="tabpanel" class="tab-pane" id="slate">
+        <img src="images/slate.png" class="screenshot-image">
       </div>
       
 
@@ -146,8 +281,18 @@ img {
       </div>
       
 
+      <div role="tabpanel" class="tab-pane" id="superhero">
+        <img src="images/superhero.png" class="screenshot-image">
+      </div>
+      
+
       <div role="tabpanel" class="tab-pane" id="united">
         <img src="images/united.png" class="screenshot-image">
+      </div>
+      
+
+      <div role="tabpanel" class="tab-pane" id="yeti">
+        <img src="images/yeti.png" class="screenshot-image">
       </div>
       
 
@@ -185,20 +330,20 @@ img {
     $("#themeTabs a:first").tab("show");
   });
   </script>
-</p>
+
 <div id="how-to-use-it" class="section level2">
 <h2>How to use it</h2>
 <p><strong>shinythemes</strong> requires Shiny 0.11 or later. To intsall:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;shinythemes&quot;</span>)</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;shinythemes&quot;</span>)</code></pre></div>
 <p>In your ui.R, use the <code>theme</code> argument to <code>bootstrapPage</code>, <code>fluidPage</code>, <code>navbarPage</code>, or <code>fixedPage</code>. The value should be <code>shinytheme(&quot;&lt;theme&gt;&quot;)</code>; for example, <code>shinytheme(&quot;cerulean&quot;)</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">## ui.R ##
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## ui.R ##
 <span class="kw">library</span>(shinythemes)
 
 <span class="kw">fluidPage</span>(<span class="dt">theme =</span> <span class="kw">shinytheme</span>(<span class="st">&quot;cerulean&quot;</span>),
   ...
-)</code></pre>
+)</code></pre></div>
 <p>Similarly, if you have a single-file app:</p>
-<pre class="sourceCode r"><code class="sourceCode r">## app.R ##
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## app.R ##
 <span class="kw">library</span>(shinythemes)
 
 <span class="kw">shinyApp</span>(
@@ -206,7 +351,7 @@ img {
     ...
   ),
   <span class="dt">server =</span> function(input, output) { }
-)</code></pre>
+)</code></pre></div>
 </div>
 <div id="the-themes" class="section level2">
 <h2>The themes</h2>
@@ -235,10 +380,10 @@ img {
  |-- www/
       |-- mytheme.css</code></pre>
 <p>Files in the <code>www/</code> directory are automatically made available to your app. Your <code>ui.R</code> file would look like this:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fluidPage</span>(
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fluidPage</span>(
   <span class="dt">theme =</span> <span class="st">&quot;mytheme.css&quot;</span>,
   ...
-)</code></pre>
+)</code></pre></div>
 <hr>
 <footer>
 <div>
@@ -254,6 +399,8 @@ Copyright © 2014 RStudio, Inc.
 </div>
 
 
+
+
 </div>
 
 <script>
@@ -262,6 +409,7 @@ Copyright © 2014 RStudio, Inc.
 $(document).ready(function () {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
 });
+
 
 </script>
 
