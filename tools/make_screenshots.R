@@ -8,7 +8,7 @@ themes <- c("default", "cerulean", "cosmo", "cyborg", "darkly", "flatly",
             "slate", "spacelab", "superhero", "united", "yeti")
 
 # The application to use for screenshots
-appDir <- "apps/081-widgets-gallery/"
+appDir <- "apps/navbar/"
 
 # Returns the file currently being sourced or run with Rscript
 thisFile <- function() {
