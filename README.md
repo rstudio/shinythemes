@@ -7,12 +7,20 @@ The shinythemes package provides some Bootstrap themes for use with Shiny. The t
 
 * [cerulean](http://bootswatch.com/cerulean/)
 * [cosmo](http://bootswatch.com/cosmo/)
+* [cyborg](http://bootswatch.com/cyborg/)
+* [darkly](http://bootswatch.com/darkly/)
 * [flatly](http://bootswatch.com/flatly/)
 * [journal](http://bootswatch.com/journal/)
+* [lumen](http://bootswatch.com/lumen/)
+* [paper](http://bootswatch.com/paper/)
 * [readable](http://bootswatch.com/readable/)
+* [sandstone](http://bootswatch.com/sandstone/)
+* [simplex](http://bootswatch.com/simplex/)
+* [slate](http://bootswatch.com/slate/)
 * [spacelab](http://bootswatch.com/spacelab/)
+* [superhero](http://bootswatch.com/superhero/)
 * [united](http://bootswatch.com/united/)
-
+* [yeti](http://bootswatch.com/yeti/)
 
 ## Using themes
 
