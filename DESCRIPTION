@@ -7,7 +7,7 @@ Authors@R: c(
     person("Thomas", "Park", role = c("ctb", "cph"), comment = "Bootswatch themes"),
     person("Lukasz", "Dziedzic", role = c("ctb", "cph"), comment = "Lato font"),
     person("Nathan", "Willis", role = c("ctb", "cph"), comment = "News Cycle font"),
-    person(family = "Google Corporation", role = c("ctb", "cph"), comment = "Open Sans font"),
+    person(family = "Google Corporation", role = c("ctb", "cph"), comment = "Open Sans and Roboto fonts"),
     person("Matt", "McInerney", role = c("ctb", "cph"), comment = "Raleway font"),
     person(family = "Adobe Systems Incorporated", role = c("ctb", "cph"), comment = "Source Sans Pro font"),
     person(family = "Canonical Ltd", role = c("ctb", "cph"), comment = "Ubuntu font")
