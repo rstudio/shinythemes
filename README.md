@@ -46,12 +46,12 @@ shinyApp(
 
 ## Live theme selector
 
-If you want to quickly test out different themes with an application, you can simply add `themeSelector()` somewhere to the page. This will add a select box which lets you choose the theme. It will change the theme without having to reload or restart your app.
+If you want to quickly test out different themes with an application, you can simply add `themeSelector()` somewhere to the UI. This will add a select box which lets you choose the theme. It will change the theme without having to reload or restart your app.
 
 ```R
 shinyApp(
   ui = fluidPage(
-    shinythemes::themeSelector(),
+    shinythemes::themeSelector(),  # <--- Add this somewhere in the UI
     sidebarPanel(
       textInput("txt", "Text input:", "text here"),
       sliderInput("slider", "Slider input:", 1, 100, 30),
