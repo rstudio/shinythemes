@@ -4,7 +4,7 @@
 \alias{shinytheme}
 \title{Return the URL for a Shiny theme}
 \usage{
-shinytheme(theme)
+shinytheme(theme = NULL)
 }
 \arguments{
 \item{theme}{Name of a theme.}
