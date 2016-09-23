@@ -26,23 +26,7 @@ The shinythemes package provides some Bootstrap themes for use with Shiny. The t
 
 Using the themes is simple. Use the `theme` argument to `bootstrapPage`, `fluidPage`, `navbarPage`, or `fixedPage`. The value should be `shinytheme("<theme>")`; for example, `shinytheme("cerulean")`.
 
-For example, a ui.R file might look something like this:
-
-```R
-library(shinythemes)
-
-navbarPage("United",
-  theme = shinytheme("cerulean"),
-  tabPanel("Plot", "Plot tab contents..."),
-  navbarMenu("More",
-    tabPanel("Summary", "Summary tab contents..."),
-    tabPanel("Table", "Table tab contents...")
-  )
-)
-```
-
-
-An example single-file app might look like this:
+For example, a single-file app might look like this:
 
 ```R
 library(shinythemes)
@@ -57,5 +41,30 @@ shinyApp(
     )
   ),
   server = function(input, output) { }
+)
+```
+
+## Live theme selector
+
+If you want to quickly test out different themes with an application, you can simply add `themeSelector()` somewhere to the page. This will add a select box which lets you choose the theme. It will change the theme without having to reload or restart your app.
+
+```R
+shinyApp(
+  ui = fluidPage(
+    shinythemes::themeSelector(),
+    sidebarPanel(
+      textInput("txt", "Text input:", "text here"),
+      sliderInput("slider", "Slider input:", 1, 100, 30),
+      actionButton("action", "Button"),
+      actionButton("action2", "Button2", class = "btn-primary")
+    ),
+    mainPanel(
+      tabsetPanel(
+        tabPanel("Tab 1"),
+        tabPanel("Tab 2")
+      )
+    )
+  ),
+  server = function(input, output) {}
 )
 ```
