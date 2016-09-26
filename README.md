@@ -29,11 +29,9 @@ Using the themes is simple. Use the `theme` argument to `bootstrapPage`, `fluidP
 For example, a single-file app might look like this:
 
 ```R
-library(shinythemes)
-
 shinyApp(
   ui = navbarPage("United",
-    theme = shinytheme("united"),
+    theme = shinythemes::shinytheme("united"),  # <--- Specify theme here
     tabPanel("Plot", "Plot tab contents..."),
     navbarMenu("More",
       tabPanel("Summary", "Summary tab contents..."),
@@ -68,3 +66,5 @@ shinyApp(
   server = function(input, output) {}
 )
 ```
+
+Once you've found a theme that you like, use it in the page as shown above, with `theme = shinythemes::shinytheme(<theme here>)`.
