@@ -2,7 +2,11 @@
 title: "Shiny Themes"
 ---
 
-The **shinythemes** package makes it easy to alter the overall appearance of your Shiny applications. Here are screenshots of the same application with different themes (click to enlarge):
+If you've created any shiny app in the past, you're probably used to the default Bootstrap theme:
+
+<img src="images/default.png" style="width: 600px; display: block; margin-left: auto; margin-right: auto;">
+
+However, you can also easily alter the overall appearance of your Shiny application using the **shinythemes** package. Here are screenshots of the same application with different themes (click to enlarge):
 
 
 ```{r echo=FALSE}
@@ -22,10 +26,12 @@ thumbnailTemplate <- function(theme) {
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4>', toupper(theme), ' (<a href=http://bootswatch.com/', theme, '/>official page</a>)</h4>
+          <h4>', toupper(theme), ' (<a href=http://bootswatch.com/', theme, '/>http://bootswatch.com/', theme,'</a>)</h4>
         </div>
         <div class="modal-body">
-          <img id="modal-img-', theme,'" src="">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/', theme, '.png">
+          <div class="next"><p>&gt;</p></div>
         </div>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -54,28 +60,55 @@ output <- paste0(c(
     equalHeight($(".thumbnail-img"));
   
     $("img").on("click", function() {
-      var $src = $(this).attr("src"); 
       var $id = $(this).attr("id");
-      $("#modal-img-" + $id).attr("src", $src);
       $("#modal-" + $id).modal("show");
     });
+
     $("img + p").on("click", function() {
-      var $src = $(this).prev().attr("src");
       var $id = $(this).prev().attr("id");
-      $("#modal-img-" + $id).attr("src", $src);
       $("#modal-" + $id).modal("show");
     });
+
+    $(".prev").on("click", function() {
+      var thisModal = $(this).parents(".modal")
+      var prevModal = $(thisModal).prevAll(".modal");
+      $(thisModal).modal("hide");
+      if (prevModal.length > 0) {
+        $(prevModal[0]).modal("show");
+      }
+    })
+
+    $(".next").on("click", function() {
+      var thisModal = $(this).parents(".modal")
+      var nextModal = $(thisModal).nextAll(".modal");
+      $(thisModal).modal("hide");
+      if (nextModal.length > 0) {
+        $(nextModal[0]).modal("show");
+      }
+    })
   });
   </script>
 
   <style>
+  .thumbnail {
+    #box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    border: none;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
   .thumbnail:hover {
-    background-color: #000;
+    transform: scale(1.2, 1.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1;
     cursor: pointer;
   }
 
   .thumbnail:hover img {
-    opacity: 0.4;
+    opacity: 0.5;
   }
   
   .thumbnail p {
@@ -84,7 +117,7 @@ output <- paste0(c(
     top: 30%;
     width: 100%;
     text-align: center;
-    color: #fff;
+    color: #000;
     font-size: 300%;
     font-weight: bold;
     font-variant: small-caps;
@@ -96,6 +129,38 @@ output <- paste0(c(
   .thumbnail:hover p {
     visibility: visible;
     opacity: 1;
+  }
+
+  .modal-img, .prev, .next {
+    display: inline-block;
+  }
+
+  .modal-img {
+    width: 580px;
+  }
+
+  .prev, .next {
+    font-size: 15px;
+    padding: 33% 24px;
+    background-color: #000;
+    opacity: 0.2;
+  }
+
+  .prev:hover, .next:hover {
+    cursor: pointer;
+  }
+
+  .prev p, .next p {
+    font-size: 50px;
+    color: #fff;
+  }
+
+  .modal-body {
+    padding: 0px;
+  }
+
+  .modal-dialog {
+    width: 745.8px;
   }
   </style>
 '), collapse = "")
