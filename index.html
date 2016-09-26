@@ -148,7 +148,8 @@ $(document).ready(function () {
 
 
 <p>If you’ve created any shiny app in the past, you’re probably used to the default Bootstrap theme:</p>
-<p><img src="images/default.png" style="width: 600px; display: block; margin-left: auto; margin-right: auto;"></p>
+<p><img src="images/default.png" style="width: 600px; display: block; margin-left: auto; margin-right: auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);"></p>
+<p><br/></p>
 <p>However, you can also easily alter the overall appearance of your Shiny application using the <strong>shinythemes</strong> package. Here are screenshots of the same application with different themes (click to enlarge):</p>
 <div class="row">
   <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
@@ -581,6 +582,13 @@ $(document).ready(function () {
   .prev p, .next p {
     font-size: 50px;
     color: #fff;
+  }
+
+  .prev p, .next p, .thumbnail, .modal-img .modal-body {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */  
   }
 
   .modal-body {
