@@ -17,7 +17,6 @@ if (theme == "" || theme == "default") {
 
 shinyApp(
   ui = tagList(
-    shinythemes::themeSelector(),
     navbarPage(theme = theme,
       title,
       tabPanel("Navbar 1",
