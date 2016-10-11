@@ -47,19 +47,7 @@ output <- paste0(c(
   '</div>
   <div style="display:inline-block"></div>
   <script>
-  function equalHeight(group) {    
-    var shortest = Infinity;    
-    group.each(function() {       
-      var thisHeight = $(this).height();       
-      if (thisHeight < shortest) {          
-        shortest = thisHeight;       
-      }    
-    });    
-    group.each(function() { $(this).height(shortest); });
-  } 
-  
   $(document).ready(function() {
-    equalHeight($(".thumbnail-img"));
   
     $("img").on("click", function() {
       var $id = $(this).attr("id");
@@ -107,6 +95,10 @@ output <- paste0(c(
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     z-index: 1;
     cursor: pointer;
+  }
+
+  .thumbnail img {
+    height: 160px;
   }
 
   .thumbnail:hover img {
