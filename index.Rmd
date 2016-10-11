@@ -2,92 +2,186 @@
 title: "Shiny Themes"
 ---
 
+If you've created any shiny app in the past, you're probably used to the default Bootstrap theme:
 
-The **shinythemes** package makes it easy to alter the overall appearance of your Shiny applications Here are screenshots of the same applications with different themes:
+<img src="images/default.png" style="width: 600px; display: block; margin-left: auto; margin-right: auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+
+<br/>
+
+However, you can also easily alter the overall appearance of your Shiny application using the **shinythemes** package. Here are screenshots of the same application with different themes (click to enlarge):
 
 
 ```{r echo=FALSE}
-images <- c("default", "cerulean", "cosmo", "cyborg", "darkly", "flatly",
+## took default out of `themes` in order to have a nice full thumbnail grid
+themes <- c("cerulean", "cosmo", "cyborg", "darkly", "flatly",
             "journal", "lumen", "paper", "readable", "sandstone", "simplex",
             "slate", "spacelab", "superhero", "united", "yeti")
 
-generateTabTags <- function(images) {  
-  vapply(images, function(image) {
-    # Capitalize first letter
-    label <- paste0(toupper(substring(image, 1, 1)), substring(image, 2))
+thumbnailTemplate <- function(theme) {
+  paste0(c('
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="', theme, '" src="images/', theme, '.png" alt="', theme, '"/>
+    <p>', theme, '</p>
+  </div>
+  <div class="modal" id="modal-', theme, '" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>', toupper(theme), ' (<a href=http://bootswatch.com/', theme, '/>http://bootswatch.com/', theme,'</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/', theme, '.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  '), collapse = "")
+}
+
+output <- paste0(c( 
+  '<div class="row">',
+    vapply(themes, thumbnailTemplate, FUN.VALUE = character(1)),
+  '</div>
+  <div style="display:inline-block"></div>
+  <script>
+  function equalHeight(group) {    
+    var shortest = Infinity;    
+    group.each(function() {       
+      var thisHeight = $(this).height();       
+      if (thisHeight < shortest) {          
+        shortest = thisHeight;       
+      }    
+    });    
+    group.each(function() { $(this).height(shortest); });
+  } 
   
-    sprintf('
-      <li role="presentation"><a href="#%s">%s</a></li>
-      ', image, label
-    )
-  }, FUN.VALUE = character(1))
-}
-
-generateItemTags <- function(images) {  
-  vapply(images, function(image) {
-    sprintf('
-      <div role="tabpanel" class="tab-pane" id="%s">
-        <img src="images/%s.png" class="screenshot-image">
-      </div>
-      ', image, image
-    )
-  }, FUN.VALUE = character(1))
-}
-
-output <- paste0(c('
-<div class="image-frame">
-  <div class="row">
-    <div class="col-sm-2">
-      <ul id="themeTabs" class="nav nav-pills nav-stacked">',
-      generateTabTags(images), '
-      </ul>
-    </div>
-
-    <div class="tab-content col-sm-10">',
-      generateItemTags(images), '
-    </div>
-    </div>
-</div>
-
-<script>
-  // Cycle through tabs automatically
-  var tabChange = function() {
-      var tabs = $(".nav-pills > li");
-      var active = tabs.filter(".active");
-      var next = active.next("li").length ?
-                  active.next("li").find("a") :
-                  tabs.filter(":first-child").find("a");
-      next.tab("show");
-      tabCycle = setTimeout(tabChange, 4000);
-  };
-  var tabCycle = setTimeout(tabChange, 4000);
-
-  // If user clicks on a tab, stop cycling it and activate
-  $("#themeTabs li a").each(function() {
-    $(this).click(function (e) {
-      e.preventDefault();
-      clearInterval(tabCycle);
-      $(this).tab("show");
-
-      // Automatically start cycling tabs after a delay
-      tabCycle = setTimeout(tabChange, 12000);
+  $(document).ready(function() {
+    equalHeight($(".thumbnail-img"));
+  
+    $("img").on("click", function() {
+      var $id = $(this).attr("id");
+      $("#modal-" + $id).modal("show");
     });
-  });
 
-  // On page load, activate first tab
-  $(function () {
-    $("#themeTabs a:first").tab("show");
+    $("img + p").on("click", function() {
+      var $id = $(this).prev().attr("id");
+      $("#modal-" + $id).modal("show");
+    });
+
+    $(".prev").on("click", function() {
+      var thisModal = $(this).parents(".modal")
+      var prevModal = $(thisModal).prevAll(".modal");
+      $(thisModal).modal("hide");
+      if (prevModal.length > 0) {
+        $(prevModal[0]).modal("show");
+      }
+    })
+
+    $(".next").on("click", function() {
+      var thisModal = $(this).parents(".modal")
+      var nextModal = $(thisModal).nextAll(".modal");
+      $(thisModal).modal("hide");
+      if (nextModal.length > 0) {
+        $(nextModal[0]).modal("show");
+      }
+    })
   });
   </script>
-'), collapse = "\n")
+
+  <style>
+  .thumbnail {
+    #box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    border: none;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  .thumbnail:hover {
+    transform: scale(1.2, 1.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .thumbnail:hover img {
+    opacity: 0.5;
+  }
+  
+  .thumbnail p {
+    position: absolute;
+    left: 0;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 300%;
+    font-weight: bold;
+    font-variant: small-caps;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .thumbnail:hover p {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .modal-img, .prev, .next {
+    display: inline-block;
+  }
+
+  .modal-img {
+    width: 580px;
+  }
+
+  .prev, .next {
+    font-size: 15px;
+    padding: 33% 24px;
+    background-color: #000;
+    opacity: 0.2;
+  }
+
+  .prev:hover, .next:hover {
+    cursor: pointer;
+  }
+
+  .prev p, .next p {
+    font-size: 50px;
+    color: #fff;
+  }
+
+  .prev p, .next p, .thumbnail, .modal-img .modal-body {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */  
+  }
+
+  .modal-body {
+    padding: 0px;
+  }
+
+  .modal-dialog {
+    width: 745.8px;
+  }
+  </style>
+'), collapse = "")
 
 knitr::asis_output(htmltools::htmlPreserve(output))
 ```
 
+All the themes are from http://bootswatch.com/, and are MIT-licensed.
 
 ## How to use it
 
-**shinythemes** requires Shiny 0.11 or later. To intsall:
+**shinythemes** requires Shiny 0.11 or later. To install:
 
 ```{r eval=FALSE}
 install.packages("shinythemes")
@@ -120,19 +214,35 @@ shinyApp(
 )
 ```
 
+### Live theme selector
 
-## The themes
 
-All the themes are from http://bootswatch.com/, and are MIT-licensed.
+If you want to quickly test out different themes with an application, you can simply add `themeSelector()` somewhere to the UI. This will add a select box which lets you choose the theme. It will change the theme without having to reload or restart your app. You can see the theme selector in action [here](https://gallery.shinyapps.io/117-shinythemes/).
 
-* [cerulean](http://bootswatch.com/cerulean/)
-* [cosmo](http://bootswatch.com/cosmo/)
-* [flatly](http://bootswatch.com/flatly/)
-* [journal](http://bootswatch.com/journal/)
-* [readable](http://bootswatch.com/readable/)
-* [spacelab](http://bootswatch.com/spacelab/)
-* [united](http://bootswatch.com/united/)
+The theme selector is only meant to be used while developing an application. Once you've decided on which theme to use, pass it to the `theme` argument as described earlier.
 
+Here's an example app with the theme selector:
+
+```R
+shinyApp(
+  ui = fluidPage(
+    shinythemes::themeSelector(),  # <--- Add this somewhere in the UI
+    sidebarPanel(
+      textInput("txt", "Text input:", "text here"),
+      sliderInput("slider", "Slider input:", 1, 100, 30),
+      actionButton("action", "Button"),
+      actionButton("action2", "Button2", class = "btn-primary")
+    ),
+    mainPanel(
+      tabsetPanel(
+        tabPanel("Tab 1"),
+        tabPanel("Tab 2")
+      )
+    )
+  ),
+  server = function(input, output) {}
+)
+```
 
 ## How it works
 

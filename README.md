@@ -7,7 +7,6 @@ Requirements for building the site:
 
 * R with rmarkdown for page rendering
 * PhantomJS (for app screenshots)
-* Jekyll (optional)
 
 The entire site can be built by running `make`. This will:
 

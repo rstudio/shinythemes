@@ -148,192 +148,463 @@ $(document).ready(function () {
 </div>
 
 
-<p>The <strong>shinythemes</strong> package makes it easy to alter the overall appearance of your Shiny applications Here are screenshots of the same applications with different themes:</p>
-
-<div class="image-frame">
-  <div class="row">
-    <div class="col-sm-2">
-      <ul id="themeTabs" class="nav nav-pills nav-stacked">
-
-      <li role="presentation"><a href="#default">Default</a></li>
-      
-
-      <li role="presentation"><a href="#cerulean">Cerulean</a></li>
-      
-
-      <li role="presentation"><a href="#cosmo">Cosmo</a></li>
-      
-
-      <li role="presentation"><a href="#cyborg">Cyborg</a></li>
-      
-
-      <li role="presentation"><a href="#darkly">Darkly</a></li>
-      
-
-      <li role="presentation"><a href="#flatly">Flatly</a></li>
-      
-
-      <li role="presentation"><a href="#journal">Journal</a></li>
-      
-
-      <li role="presentation"><a href="#lumen">Lumen</a></li>
-      
-
-      <li role="presentation"><a href="#paper">Paper</a></li>
-      
-
-      <li role="presentation"><a href="#readable">Readable</a></li>
-      
-
-      <li role="presentation"><a href="#sandstone">Sandstone</a></li>
-      
-
-      <li role="presentation"><a href="#simplex">Simplex</a></li>
-      
-
-      <li role="presentation"><a href="#slate">Slate</a></li>
-      
-
-      <li role="presentation"><a href="#spacelab">Spacelab</a></li>
-      
-
-      <li role="presentation"><a href="#superhero">Superhero</a></li>
-      
-
-      <li role="presentation"><a href="#united">United</a></li>
-      
-
-      <li role="presentation"><a href="#yeti">Yeti</a></li>
-      
-
-      </ul>
-    </div>
-
-    <div class="tab-content col-sm-10">
-
-      <div role="tabpanel" class="tab-pane" id="default">
-        <img src="images/default.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="cerulean">
-        <img src="images/cerulean.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="cosmo">
-        <img src="images/cosmo.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="cyborg">
-        <img src="images/cyborg.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="darkly">
-        <img src="images/darkly.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="flatly">
-        <img src="images/flatly.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="journal">
-        <img src="images/journal.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="lumen">
-        <img src="images/lumen.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="paper">
-        <img src="images/paper.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="readable">
-        <img src="images/readable.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="sandstone">
-        <img src="images/sandstone.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="simplex">
-        <img src="images/simplex.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="slate">
-        <img src="images/slate.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="spacelab">
-        <img src="images/spacelab.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="superhero">
-        <img src="images/superhero.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="united">
-        <img src="images/united.png" class="screenshot-image">
-      </div>
-      
-
-      <div role="tabpanel" class="tab-pane" id="yeti">
-        <img src="images/yeti.png" class="screenshot-image">
-      </div>
-      
-
-    </div>
-    </div>
-</div>
-
-<script>
-  // Cycle through tabs automatically
-  var tabChange = function() {
-      var tabs = $(".nav-pills > li");
-      var active = tabs.filter(".active");
-      var next = active.next("li").length ?
-                  active.next("li").find("a") :
-                  tabs.filter(":first-child").find("a");
-      next.tab("show");
-      tabCycle = setTimeout(tabChange, 4000);
-  };
-  var tabCycle = setTimeout(tabChange, 4000);
-
-  // If user clicks on a tab, stop cycling it and activate
-  $("#themeTabs li a").each(function() {
-    $(this).click(function (e) {
-      e.preventDefault();
-      clearInterval(tabCycle);
-      $(this).tab("show");
-
-      // Automatically start cycling tabs after a delay
-      tabCycle = setTimeout(tabChange, 12000);
+<p>If you’ve created any shiny app in the past, you’re probably used to the default Bootstrap theme:</p>
+<p><img src="images/default.png" style="width: 600px; display: block; margin-left: auto; margin-right: auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3);"></p>
+<p><br/></p>
+<p>However, you can also easily alter the overall appearance of your Shiny application using the <strong>shinythemes</strong> package. Here are screenshots of the same application with different themes (click to enlarge):</p>
+<div class="row">
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="cerulean" src="images/cerulean.png" alt="cerulean"/>
+    <p>cerulean</p>
+  </div>
+  <div class="modal" id="modal-cerulean" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>CERULEAN (<a href=http://bootswatch.com/cerulean/>http://bootswatch.com/cerulean</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/cerulean.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="cosmo" src="images/cosmo.png" alt="cosmo"/>
+    <p>cosmo</p>
+  </div>
+  <div class="modal" id="modal-cosmo" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>COSMO (<a href=http://bootswatch.com/cosmo/>http://bootswatch.com/cosmo</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/cosmo.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="cyborg" src="images/cyborg.png" alt="cyborg"/>
+    <p>cyborg</p>
+  </div>
+  <div class="modal" id="modal-cyborg" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>CYBORG (<a href=http://bootswatch.com/cyborg/>http://bootswatch.com/cyborg</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/cyborg.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="darkly" src="images/darkly.png" alt="darkly"/>
+    <p>darkly</p>
+  </div>
+  <div class="modal" id="modal-darkly" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>DARKLY (<a href=http://bootswatch.com/darkly/>http://bootswatch.com/darkly</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/darkly.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="flatly" src="images/flatly.png" alt="flatly"/>
+    <p>flatly</p>
+  </div>
+  <div class="modal" id="modal-flatly" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>FLATLY (<a href=http://bootswatch.com/flatly/>http://bootswatch.com/flatly</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/flatly.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="journal" src="images/journal.png" alt="journal"/>
+    <p>journal</p>
+  </div>
+  <div class="modal" id="modal-journal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>JOURNAL (<a href=http://bootswatch.com/journal/>http://bootswatch.com/journal</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/journal.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="lumen" src="images/lumen.png" alt="lumen"/>
+    <p>lumen</p>
+  </div>
+  <div class="modal" id="modal-lumen" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>LUMEN (<a href=http://bootswatch.com/lumen/>http://bootswatch.com/lumen</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/lumen.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="paper" src="images/paper.png" alt="paper"/>
+    <p>paper</p>
+  </div>
+  <div class="modal" id="modal-paper" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>PAPER (<a href=http://bootswatch.com/paper/>http://bootswatch.com/paper</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/paper.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="readable" src="images/readable.png" alt="readable"/>
+    <p>readable</p>
+  </div>
+  <div class="modal" id="modal-readable" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>READABLE (<a href=http://bootswatch.com/readable/>http://bootswatch.com/readable</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/readable.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="sandstone" src="images/sandstone.png" alt="sandstone"/>
+    <p>sandstone</p>
+  </div>
+  <div class="modal" id="modal-sandstone" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>SANDSTONE (<a href=http://bootswatch.com/sandstone/>http://bootswatch.com/sandstone</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/sandstone.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="simplex" src="images/simplex.png" alt="simplex"/>
+    <p>simplex</p>
+  </div>
+  <div class="modal" id="modal-simplex" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>SIMPLEX (<a href=http://bootswatch.com/simplex/>http://bootswatch.com/simplex</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/simplex.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="slate" src="images/slate.png" alt="slate"/>
+    <p>slate</p>
+  </div>
+  <div class="modal" id="modal-slate" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>SLATE (<a href=http://bootswatch.com/slate/>http://bootswatch.com/slate</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/slate.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="spacelab" src="images/spacelab.png" alt="spacelab"/>
+    <p>spacelab</p>
+  </div>
+  <div class="modal" id="modal-spacelab" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>SPACELAB (<a href=http://bootswatch.com/spacelab/>http://bootswatch.com/spacelab</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/spacelab.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="superhero" src="images/superhero.png" alt="superhero"/>
+    <p>superhero</p>
+  </div>
+  <div class="modal" id="modal-superhero" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>SUPERHERO (<a href=http://bootswatch.com/superhero/>http://bootswatch.com/superhero</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/superhero.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="united" src="images/united.png" alt="united"/>
+    <p>united</p>
+  </div>
+  <div class="modal" id="modal-united" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>UNITED (<a href=http://bootswatch.com/united/>http://bootswatch.com/united</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/united.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  <div class="col-xs-6 col-sm-4 col-md-3 thumbnail">
+    <img class="thumbnail-img" id="yeti" src="images/yeti.png" alt="yeti"/>
+    <p>yeti</p>
+  </div>
+  <div class="modal" id="modal-yeti" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4>YETI (<a href=http://bootswatch.com/yeti/>http://bootswatch.com/yeti</a>)</h4>
+        </div>
+        <div class="modal-body">
+          <div class="prev"><p>&lt;</p></div>
+          <img class="modal-img" src="images/yeti.png">
+          <div class="next"><p>&gt;</p></div>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  </div>
+  <div style="display:inline-block"></div>
+  <script>
+  function equalHeight(group) {    
+    var shortest = Infinity;    
+    group.each(function() {       
+      var thisHeight = $(this).height();       
+      if (thisHeight < shortest) {          
+        shortest = thisHeight;       
+      }    
+    });    
+    group.each(function() { $(this).height(shortest); });
+  } 
+  
+  $(document).ready(function() {
+    equalHeight($(".thumbnail-img"));
+  
+    $("img").on("click", function() {
+      var $id = $(this).attr("id");
+      $("#modal-" + $id).modal("show");
     });
-  });
 
-  // On page load, activate first tab
-  $(function () {
-    $("#themeTabs a:first").tab("show");
+    $("img + p").on("click", function() {
+      var $id = $(this).prev().attr("id");
+      $("#modal-" + $id).modal("show");
+    });
+
+    $(".prev").on("click", function() {
+      var thisModal = $(this).parents(".modal")
+      var prevModal = $(thisModal).prevAll(".modal");
+      $(thisModal).modal("hide");
+      if (prevModal.length > 0) {
+        $(prevModal[0]).modal("show");
+      }
+    })
+
+    $(".next").on("click", function() {
+      var thisModal = $(this).parents(".modal")
+      var nextModal = $(thisModal).nextAll(".modal");
+      $(thisModal).modal("hide");
+      if (nextModal.length > 0) {
+        $(nextModal[0]).modal("show");
+      }
+    })
   });
   </script>
 
+  <style>
+  .thumbnail {
+    #box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    border: none;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  .thumbnail:hover {
+    transform: scale(1.2, 1.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .thumbnail:hover img {
+    opacity: 0.5;
+  }
+  
+  .thumbnail p {
+    position: absolute;
+    left: 0;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 300%;
+    font-weight: bold;
+    font-variant: small-caps;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .thumbnail:hover p {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .modal-img, .prev, .next {
+    display: inline-block;
+  }
+
+  .modal-img {
+    width: 580px;
+  }
+
+  .prev, .next {
+    font-size: 15px;
+    padding: 33% 24px;
+    background-color: #000;
+    opacity: 0.2;
+  }
+
+  .prev:hover, .next:hover {
+    cursor: pointer;
+  }
+
+  .prev p, .next p {
+    font-size: 50px;
+    color: #fff;
+  }
+
+  .prev p, .next p, .thumbnail, .modal-img .modal-body {
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */  
+  }
+
+  .modal-body {
+    padding: 0px;
+  }
+
+  .modal-dialog {
+    width: 745.8px;
+  }
+  </style>
+
+<p>All the themes are from <a href="http://bootswatch.com/" class="uri">http://bootswatch.com/</a>, and are MIT-licensed.</p>
 <div id="how-to-use-it" class="section level2">
 <h2>How to use it</h2>
-<p><strong>shinythemes</strong> requires Shiny 0.11 or later. To intsall:</p>
+<p><strong>shinythemes</strong> requires Shiny 0.11 or later. To install:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;shinythemes&quot;</span>)</code></pre></div>
 <p>In your ui.R, use the <code>theme</code> argument to <code>bootstrapPage</code>, <code>fluidPage</code>, <code>navbarPage</code>, or <code>fixedPage</code>. The value should be <code>shinytheme(&quot;&lt;theme&gt;&quot;)</code>; for example, <code>shinytheme(&quot;cerulean&quot;)</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## ui.R ##
@@ -352,19 +623,30 @@ $(document).ready(function () {
   ),
   <span class="dt">server =</span> function(input, output) { }
 )</code></pre></div>
+<div id="live-theme-selector" class="section level3">
+<h3>Live theme selector</h3>
+<p>If you want to quickly test out different themes with an application, you can simply add <code>themeSelector()</code> somewhere to the UI. This will add a select box which lets you choose the theme. It will change the theme without having to reload or restart your app. You can see the theme selector in action <a href="https://gallery.shinyapps.io/117-shinythemes/">here</a>.</p>
+<p>The theme selector is only meant to be used while developing an application. Once you’ve decided on which theme to use, pass it to the <code>theme</code> argument as described earlier.</p>
+<p>Here’s an example app with the theme selector:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">shinyApp</span>(
+  <span class="dt">ui =</span> <span class="kw">fluidPage</span>(
+    shinythemes::<span class="kw">themeSelector</span>(),  <span class="co"># &lt;--- Add this somewhere in the UI</span>
+    <span class="kw">sidebarPanel</span>(
+      <span class="kw">textInput</span>(<span class="st">&quot;txt&quot;</span>, <span class="st">&quot;Text input:&quot;</span>, <span class="st">&quot;text here&quot;</span>),
+      <span class="kw">sliderInput</span>(<span class="st">&quot;slider&quot;</span>, <span class="st">&quot;Slider input:&quot;</span>, <span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">30</span>),
+      <span class="kw">actionButton</span>(<span class="st">&quot;action&quot;</span>, <span class="st">&quot;Button&quot;</span>),
+      <span class="kw">actionButton</span>(<span class="st">&quot;action2&quot;</span>, <span class="st">&quot;Button2&quot;</span>, <span class="dt">class =</span> <span class="st">&quot;btn-primary&quot;</span>)
+    ),
+    <span class="kw">mainPanel</span>(
+      <span class="kw">tabsetPanel</span>(
+        <span class="kw">tabPanel</span>(<span class="st">&quot;Tab 1&quot;</span>),
+        <span class="kw">tabPanel</span>(<span class="st">&quot;Tab 2&quot;</span>)
+      )
+    )
+  ),
+  <span class="dt">server =</span> function(input, output) {}
+)</code></pre></div>
 </div>
-<div id="the-themes" class="section level2">
-<h2>The themes</h2>
-<p>All the themes are from <a href="http://bootswatch.com/" class="uri">http://bootswatch.com/</a>, and are MIT-licensed.</p>
-<ul>
-<li><a href="http://bootswatch.com/cerulean/">cerulean</a></li>
-<li><a href="http://bootswatch.com/cosmo/">cosmo</a></li>
-<li><a href="http://bootswatch.com/flatly/">flatly</a></li>
-<li><a href="http://bootswatch.com/journal/">journal</a></li>
-<li><a href="http://bootswatch.com/readable/">readable</a></li>
-<li><a href="http://bootswatch.com/spacelab/">spacelab</a></li>
-<li><a href="http://bootswatch.com/united/">united</a></li>
-</ul>
 </div>
 <div id="how-it-works" class="section level2">
 <h2>How it works</h2>
