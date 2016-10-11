@@ -214,6 +214,36 @@ shinyApp(
 )
 ```
 
+### Live theme selector
+
+
+If you want to quickly test out different themes with an application, you can simply add `themeSelector()` somewhere to the UI. This will add a select box which lets you choose the theme. It will change the theme without having to reload or restart your app. You can see the theme selector in action [here](https://gallery.shinyapps.io/117-shinythemes/).
+
+The theme selector is only meant to be used while developing an application. Once you've decided on which theme to use, pass it to the `theme` argument as described earlier.
+
+Here's an example app with the theme selector:
+
+```R
+shinyApp(
+  ui = fluidPage(
+    shinythemes::themeSelector(),  # <--- Add this somewhere in the UI
+    sidebarPanel(
+      textInput("txt", "Text input:", "text here"),
+      sliderInput("slider", "Slider input:", 1, 100, 30),
+      actionButton("action", "Button"),
+      actionButton("action2", "Button2", class = "btn-primary")
+    ),
+    mainPanel(
+      tabsetPanel(
+        tabPanel("Tab 1"),
+        tabPanel("Tab 2")
+      )
+    )
+  ),
+  server = function(input, output) {}
+)
+```
+
 ## How it works
 
 Bootstrap can use alternative CSS files in place of the stock `bootstrap.css` file. When the **shinythemes** package is loaded, it makes these alternate themes available to Shiny applications in a relative URL under `shinythemes/`.

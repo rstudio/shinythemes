@@ -121,6 +121,7 @@ button.code-folding-btn:focus {
 </style>
 
 
+
 <div class="container-fluid main-container">
 
 <!-- tabsets -->
@@ -622,6 +623,30 @@ $(document).ready(function () {
   ),
   <span class="dt">server =</span> function(input, output) { }
 )</code></pre></div>
+<div id="live-theme-selector" class="section level3">
+<h3>Live theme selector</h3>
+<p>If you want to quickly test out different themes with an application, you can simply add <code>themeSelector()</code> somewhere to the UI. This will add a select box which lets you choose the theme. It will change the theme without having to reload or restart your app. You can see the theme selector in action <a href="https://gallery.shinyapps.io/117-shinythemes/">here</a>.</p>
+<p>The theme selector is only meant to be used while developing an application. Once you’ve decided on which theme to use, pass it to the <code>theme</code> argument as described earlier.</p>
+<p>Here’s an example app with the theme selector:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">shinyApp</span>(
+  <span class="dt">ui =</span> <span class="kw">fluidPage</span>(
+    shinythemes::<span class="kw">themeSelector</span>(),  <span class="co"># &lt;--- Add this somewhere in the UI</span>
+    <span class="kw">sidebarPanel</span>(
+      <span class="kw">textInput</span>(<span class="st">&quot;txt&quot;</span>, <span class="st">&quot;Text input:&quot;</span>, <span class="st">&quot;text here&quot;</span>),
+      <span class="kw">sliderInput</span>(<span class="st">&quot;slider&quot;</span>, <span class="st">&quot;Slider input:&quot;</span>, <span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">30</span>),
+      <span class="kw">actionButton</span>(<span class="st">&quot;action&quot;</span>, <span class="st">&quot;Button&quot;</span>),
+      <span class="kw">actionButton</span>(<span class="st">&quot;action2&quot;</span>, <span class="st">&quot;Button2&quot;</span>, <span class="dt">class =</span> <span class="st">&quot;btn-primary&quot;</span>)
+    ),
+    <span class="kw">mainPanel</span>(
+      <span class="kw">tabsetPanel</span>(
+        <span class="kw">tabPanel</span>(<span class="st">&quot;Tab 1&quot;</span>),
+        <span class="kw">tabPanel</span>(<span class="st">&quot;Tab 2&quot;</span>)
+      )
+    )
+  ),
+  <span class="dt">server =</span> function(input, output) {}
+)</code></pre></div>
+</div>
 </div>
 <div id="how-it-works" class="section level2">
 <h2>How it works</h2>
@@ -666,6 +691,7 @@ Copyright © 2014 RStudio, Inc.
 $(document).ready(function () {
   $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
 });
+
 
 </script>
 
