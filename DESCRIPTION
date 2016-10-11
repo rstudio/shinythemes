@@ -1,6 +1,6 @@
 Package: shinythemes
 Title: Themes for Shiny
-Version: 1.1.0.9000
+Version: 1.1.1
 Authors@R: c(
     person("Winston", "Chang", role = c("aut", "cre"), email = "winston@rstudio.com"),
     person(family = "RStudio", role = "cph"),
