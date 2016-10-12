@@ -19,5 +19,6 @@ Depends:
     R (>= 3.0.0)
 Imports:
     shiny (>= 0.11)
+URL: http://rstudio.github.io/shinythemes/
 License: GPL-3 | file LICENSE
 RoxygenNote: 5.0.1
