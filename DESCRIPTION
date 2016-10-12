@@ -13,7 +13,7 @@ Authors@R: c(
     person(family = "Canonical Ltd", role = c("ctb", "cph"), comment = "Ubuntu font")
     )
 Description: Themes for use with Shiny. Includes several Bootstrap themes
-    from http://bootswatch.com/, which are packaged for use with Shiny
+    from <http://bootswatch.com/>, which are packaged for use with Shiny
     applications.
 Depends:
     R (>= 3.0.0)
