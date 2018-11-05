@@ -1,5 +1,10 @@
+shinythemes 1.1.2
+=================
+
+* Added some fonts that were missing, and update all fonts. ([#5](https://github.com/rstudio/shinythemes/issues/5))
+
 shinythemes 1.1.1
-======================
+=================
 
 * Added `themeSelector()`, which inserts a widget into a Shiny page that lets the user change the theme in an application without reloading.
 
