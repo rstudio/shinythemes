@@ -5,22 +5,22 @@ See the documentation at http://rstudio.github.io/shinythemes/.
 
 The shinythemes package provides some Bootstrap themes for use with Shiny. The themes are from from http://bootswatch.com/:
 
-* [cerulean](http://bootswatch.com/cerulean/)
-* [cosmo](http://bootswatch.com/cosmo/)
-* [cyborg](http://bootswatch.com/cyborg/)
-* [darkly](http://bootswatch.com/darkly/)
-* [flatly](http://bootswatch.com/flatly/)
-* [journal](http://bootswatch.com/journal/)
-* [lumen](http://bootswatch.com/lumen/)
-* [paper](http://bootswatch.com/paper/)
-* [readable](http://bootswatch.com/readable/)
-* [sandstone](http://bootswatch.com/sandstone/)
-* [simplex](http://bootswatch.com/simplex/)
-* [slate](http://bootswatch.com/slate/)
-* [spacelab](http://bootswatch.com/spacelab/)
-* [superhero](http://bootswatch.com/superhero/)
-* [united](http://bootswatch.com/united/)
-* [yeti](http://bootswatch.com/yeti/)
+* [cerulean](http://bootswatch.com/3/cerulean/)
+* [cosmo](http://bootswatch.com/3/cosmo/)
+* [cyborg](http://bootswatch.com/3/cyborg/)
+* [darkly](http://bootswatch.com/3/darkly/)
+* [flatly](http://bootswatch.com/3/flatly/)
+* [journal](http://bootswatch.com/3/journal/)
+* [lumen](http://bootswatch.com/3/lumen/)
+* [paper](http://bootswatch.com/3/paper/)
+* [readable](http://bootswatch.com/3/readable/)
+* [sandstone](http://bootswatch.com/3/sandstone/)
+* [simplex](http://bootswatch.com/3/simplex/)
+* [slate](http://bootswatch.com/3/slate/)
+* [spacelab](http://bootswatch.com/3/spacelab/)
+* [superhero](http://bootswatch.com/3/superhero/)
+* [united](http://bootswatch.com/3/united/)
+* [yeti](http://bootswatch.com/3/yeti/)
 
 ## Using themes
 

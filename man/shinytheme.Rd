@@ -28,4 +28,3 @@ shinyApp(
 The main \link{shinythemes} page for information about available
   themes and more detailed examples.
 }
-

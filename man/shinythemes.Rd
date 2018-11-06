@@ -11,22 +11,22 @@ packaged for use with Shiny applications. The themes included are:
 }
 \details{
 \itemize{
-  \item \href{http://bootswatch.com/cerulean/}{cerulean}
-  \item \href{http://bootswatch.com/cosmo/}{cosmo}
-  \item \href{http://bootswatch.com/cyborg/}{cyborg}
-  \item \href{http://bootswatch.com/darkly/}{darkly}
-  \item \href{http://bootswatch.com/flatly/}{flatly}
-  \item \href{http://bootswatch.com/journal/}{journal}
-  \item \href{http://bootswatch.com/lumen/}{lumen}
-  \item \href{http://bootswatch.com/paper/}{paper}
-  \item \href{http://bootswatch.com/readable/}{readable}
-  \item \href{http://bootswatch.com/sandstone/}{sandstone}
-  \item \href{http://bootswatch.com/simplex/}{simplex}
-  \item \href{http://bootswatch.com/slate/}{slate}
-  \item \href{http://bootswatch.com/spacelab/}{spacelab}
-  \item \href{http://bootswatch.com/superhero/}{superhero}
-  \item \href{http://bootswatch.com/united/}{united}
-  \item \href{http://bootswatch.com/yeti/}{yeti}
+  \item \href{http://bootswatch.com/3/cerulean/}{cerulean}
+  \item \href{http://bootswatch.com/3/cosmo/}{cosmo}
+  \item \href{http://bootswatch.com/3/cyborg/}{cyborg}
+  \item \href{http://bootswatch.com/3/darkly/}{darkly}
+  \item \href{http://bootswatch.com/3/flatly/}{flatly}
+  \item \href{http://bootswatch.com/3/journal/}{journal}
+  \item \href{http://bootswatch.com/3/lumen/}{lumen}
+  \item \href{http://bootswatch.com/3/paper/}{paper}
+  \item \href{http://bootswatch.com/3/readable/}{readable}
+  \item \href{http://bootswatch.com/3/sandstone/}{sandstone}
+  \item \href{http://bootswatch.com/3/simplex/}{simplex}
+  \item \href{http://bootswatch.com/3/slate/}{slate}
+  \item \href{http://bootswatch.com/3/spacelab/}{spacelab}
+  \item \href{http://bootswatch.com/3/superhero/}{superhero}
+  \item \href{http://bootswatch.com/3/united/}{united}
+  \item \href{http://bootswatch.com/3/yeti/}{yeti}
 }
 
 To use the themes, use the \code{theme} argument to
@@ -130,4 +130,3 @@ shinyApp(
 )
 }
 }
-
