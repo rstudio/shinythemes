@@ -1,6 +1,8 @@
 shinythemes
 ===========
 
+> NOTE: This package has been superceded by the [`{bslib}` package](https://rstudio.github.io/bslib/), which provides Bootswatch (and as well as custom) themes for both Bootstrap 3 and 4.
+
 See the documentation at http://rstudio.github.io/shinythemes/.
 
 The shinythemes package provides some Bootstrap themes for use with Shiny. The themes are from from http://bootswatch.com/:
