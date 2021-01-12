@@ -16,7 +16,8 @@
   font-weight: 400;
   src: url(../fonts/Lato_400italic.ttf) format('truetype');
 }
-
+/* For compatibility with shiny::sliderInput() v1.6 & above */
+.irs-grid-pol{background:#fff !important;}.irs-grid-text{color:#fff !important;}.irs-min{color:#fff !important;}.irs-max{color:#fff !important;}
 /*!
  * bootswatch v3.3.7
  * Homepage: http://bootswatch.com

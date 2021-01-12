@@ -1,3 +1,5 @@
+/* For compatibility with shiny::sliderInput() v1.6 & above */
+.irs-grid-pol{background:#c8c8c8 !important;}.irs-grid-text{color:#c8c8c8 !important;}.irs-min{color:#c8c8c8 !important;}.irs-max{color:#c8c8c8 !important;}
 /*!
  * bootswatch v3.3.7
  * Homepage: http://bootswatch.com

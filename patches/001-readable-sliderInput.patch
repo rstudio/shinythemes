@@ -1,0 +1,52 @@
+diff --git a/inst/shinythemes/css/cyborg.min.css b/inst/shinythemes/css/cyborg.min.css
+index aac1c5a..d3faf47 100644
+--- a/inst/shinythemes/css/cyborg.min.css
++++ b/inst/shinythemes/css/cyborg.min.css
+@@ -10,7 +10,8 @@
+   font-weight: 700;
+   src: url(../fonts/Roboto_700.ttf) format('truetype');
+ }
+-
++/* For compatibility with shiny::sliderInput() v1.6 & above */
++.irs-grid-pol{background:#fff !important;}.irs-grid-text{color:#fff !important;}.irs-min{color:#fff !important;}.irs-max{color:#fff !important;}
+ /*!
+  * bootswatch v3.3.7
+  * Homepage: http://bootswatch.com
+diff --git a/inst/shinythemes/css/darkly.min.css b/inst/shinythemes/css/darkly.min.css
+index 0082fec..745b66f 100644
+--- a/inst/shinythemes/css/darkly.min.css
++++ b/inst/shinythemes/css/darkly.min.css
+@@ -16,7 +16,8 @@
+   font-weight: 400;
+   src: url(../fonts/Lato_400italic.ttf) format('truetype');
+ }
+-
++/* For compatibility with shiny::sliderInput() v1.6 & above */
++.irs-grid-pol{background:#fff !important;}.irs-grid-text{color:#fff !important;}.irs-min{color:#fff !important;}.irs-max{color:#fff !important;}
+ /*!
+  * bootswatch v3.3.7
+  * Homepage: http://bootswatch.com
+diff --git a/inst/shinythemes/css/slate.min.css b/inst/shinythemes/css/slate.min.css
+index 5eb3a4c..15a0918 100644
+--- a/inst/shinythemes/css/slate.min.css
++++ b/inst/shinythemes/css/slate.min.css
+@@ -1,3 +1,5 @@
++/* For compatibility with shiny::sliderInput() v1.6 & above */
++.irs-grid-pol{background:#c8c8c8 !important;}.irs-grid-text{color:#c8c8c8 !important;}.irs-min{color:#c8c8c8 !important;}.irs-max{color:#c8c8c8 !important;}
+ /*!
+  * bootswatch v3.3.7
+  * Homepage: http://bootswatch.com
+diff --git a/inst/shinythemes/css/superhero.min.css b/inst/shinythemes/css/superhero.min.css
+index f0deb84..ed12a30 100644
+--- a/inst/shinythemes/css/superhero.min.css
++++ b/inst/shinythemes/css/superhero.min.css
+@@ -16,7 +16,8 @@
+   font-weight: 700;
+   src: url(../fonts/Lato_700.ttf) format('truetype');
+ }
+-
++/* For compatibility with shiny::sliderInput() v1.6 & above */
++.irs-grid-pol{background:#ebebeb !important;}.irs-grid-text{color:#ebebeb !important;}.irs-min{color:#ebebeb !important;}.irs-max{color:#ebebeb !important;}
+ /*!
+  * bootswatch v3.3.7
+  * Homepage: http://bootswatch.com
