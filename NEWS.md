@@ -1,4 +1,4 @@
-shinythemes 1.1.2.9000
+shinythemes 1.2.0
 =================
 
 * Added additional CSS rules to make dark mode themes (e.g., darkly) work better with `shiny::sliderInput()` ([#14](https://github.com/rstudio/shinythemes/pull/14))
