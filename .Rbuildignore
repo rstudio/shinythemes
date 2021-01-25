@@ -3,3 +3,4 @@
 ^.*\.sublime-.*$
 ^cran-comments.md$
 ^patches$
+^\.github$
