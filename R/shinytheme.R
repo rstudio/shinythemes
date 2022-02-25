@@ -32,7 +32,7 @@ shinytheme <- function(theme = NULL) {
 
 allThemes <- function() {
   themes <- dir(system.file("shinythemes/css", package = "shinythemes"),
-                "*.min.css")
+                ".+\\.min.css")
   sub(".min.css", "", themes)
 }
 
